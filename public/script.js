@@ -1,6 +1,7 @@
-import {getApi as api} from './secret.js';
+import {getApi as apiKey} from './secret.js';
+import {populateGenreDropdown, getSelectedGenre, clearCurrentMovie,  getRandomMovie, displayMovie} from './helpers.js'
 
-const tmdbKey = await api;
+const tmdbKey =  apiKey;
 const tmdbBaseUrl = 'https://api.themoviedb.org/3';
 const playBtn = document.getElementById('playBtn');
 
@@ -31,7 +32,6 @@ const getMovies = async () => {
     if(response.ok){
       const jsonResponse = await response.json();
       const movies = jsonResponse.results;
-      console.log(movies);
       return movies;
     }
   }catch(Err){
@@ -65,7 +65,10 @@ const showRandomMovie = async () => {
   const movies = await getMovies();
   const randomMovie = getRandomMovie(movies);
   const info = await getMovieInfo(randomMovie);
+  displayMovie(info)
 };
 
 getGenres().then(populateGenreDropdown);
 playBtn.onclick = showRandomMovie;
+
+export {showRandomMovie}

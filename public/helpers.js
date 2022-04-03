@@ -1,6 +1,8 @@
+
+import {showRandomMovie} from "./script.js";
 // Populate dropdown menu with all the available genres
-const populateGenreDropdown = (genres) => {
-    const select = document.getElementById('genres')
+function populateGenreDropdown(genres) {
+    const select = document.getElementById('genres');
 
     for (const genre of genres) {
         let option = document.createElement("option");
@@ -8,7 +10,7 @@ const populateGenreDropdown = (genres) => {
         option.text = genre.name;
         select.appendChild(option);
     }
-};
+}
 
 // Returns the current genre selection from the dropdown menu
 const getSelectedGenre = () => {
@@ -19,7 +21,9 @@ const getSelectedGenre = () => {
 // Displays the like and dislike buttons on the page
 const showBtns = () => {
     const btnDiv = document.getElementById('likeOrDislikeBtns');
-    btnDiv.removeAttribute('hidden');
+    if(btnDiv.hasAttribute('hidden')===true){
+        btnDiv.removeAttribute('hidden');
+    }
 };
 
 // Clear the current movie from the screen
@@ -99,3 +103,4 @@ const displayMovie = (movieInfo) => {
     likeBtn.onclick = likeMovie;
     dislikeBtn.onclick = dislikeMovie;
 };
+export {populateGenreDropdown, getSelectedGenre, showBtns, clearCurrentMovie, likeMovie, dislikeMovie, createMoviePoster, createMovieTitle, createMovieOverview, getRandomMovie, displayMovie}

@@ -1,27 +1,36 @@
-html, body{
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Abril+Fatface&family=Manrope:wght@800&display=swap');
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: #0e121f;
     min-height: 100vh;
     min-width: 100vw;
-}
-body {
-    background-color: #0e121f;
     color: #e3dded;
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
     place-content: center;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#appTitle, #movieIcon {
+header{
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#appTitle{
     text-align: center;
-    margin: 0px auto;
     display: block;
     font-size: 3rem;
-    letter-spacing: .3rem;
 }
 
-#genreForm label{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+#movieIcon{
+    font-size: 30rem;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    opacity: .06;
 }
 
 #genreForm, #playBtn {
@@ -34,40 +43,45 @@ body {
 }
 
 #movieInfo {
-    width:  65%;
-    margin:  32px auto;
+    display: grid;
+    gap: 1em;
+    max-width: 950px;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: stretch;
+    flex-wrap: wrap;
+
 }
 
-#movieInfo:after {
-    content:  "";
-    display:  table;
-    clear:  both;
-}
-
-#moviePoster, #movieText {
-    width:  50%;
-    float:  left;
+#moviePoster{
+    width: fit-content;
+    justify-self: center;
 }
 
 img#moviePoster {
     width:  100%;
-    height:  auto;
-    display:  block;
-    margin:  auto;
+    max-width: 500px;
+    border-radius: 1rem;
 }
 
 #movieText {
-    color: #ffffff;
-    line-height: 1.25;
+    color: #e9e9e9;
+    line-height: 1.5;
+    justify-self: center;
 }
 
 #movieTitle, #movieOverview {
     padding:  32px;
 }
-
+#movieTitle{
+    font-family: 'Abril Fatface', cursive;
+}
+#movieOverview {
+    font-family: 'Abel', sans-serif;
+}
 #playBtn {
     margin-top: 20px;
-    font-size: 25px;
+    font-size: 1.6rem;
     padding: 7px 10px;
     border-radius: 10px;
     border-style: none;
@@ -78,13 +92,13 @@ img#moviePoster {
 
 label {
     display: block;
-    font-size: 35px;
+    font-size: 2.1rem;
     margin-bottom: 5px;
 }
 
 select {
     width: 100%;
-    max-width: 380px;
+    max-width: 480px;
     padding: .7rem;
     border-radius: .2rem;
     background-color: #1d243b;
@@ -94,24 +108,38 @@ select {
 }
 
 #likeOrDislikeBtns {
-    text-align: center;
+    gap: 1rem;
     margin: 0px auto;  
 }
 
 #likeBtn, #dislikeBtn {
-    padding: 15px 25px;
-    font-size: 25px;
-    border-radius: 12px;
-    border-style: none;
+    padding: .5rem;
+    font-size: 1.8rem;
+    border-radius: 5rem;
+    outline: 3px solid rgb(74, 74, 74);
+    border: none;
+    color: rgb(74, 74, 74);
     cursor:  pointer;
+    background-color: transparent;
 }
 
 #likeBtn {
-    background-color: #249e57;
-    color: darkgreen;
+    margin-right: .5rem;
 }
 
 #dislikeBtn {
-    background-color: #c74a4a;
-    color: #910000;
+    margin-left: .5rem;
+}
+
+#likeBtn:hover{
+    color: rgb(0, 174, 12);
+}
+#dislikeBtn:hover {
+    color: red;
+}
+
+@media screen and (max-width: 620px){
+    #movieInfo{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
