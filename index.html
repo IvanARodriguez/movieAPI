@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="utf-8">
-        <link rel="stylesheet" href="public/style.css">
+        <link rel="stylesheet" href="./public/style.css">
         <script defer src="https://kit.fontawesome.com/e918d10e90.js" crossorigin="anonymous"></script>
         <title>Movie Searcher</title>
     </head>
     <body>
-        <header>
+        <div class="iconHolder">
             <span id="movieIcon">🍿</span>
+        </div>
+        <header>
             <h1 id="appTitle">Movie Searcher</h1>
         </header>
         <form id="genreForm">
@@ -16,10 +20,9 @@
             <select name="genres" id="genres"></select>
         </form>
         <button id="playBtn">Find Movie</button>
-        <div id="movieInfo" class="movieInfo">
+        <div id="movieInfo">
             <div id="moviePoster"></div>
-            <div id="movieText">
-            </div>
+            <div id="movieText"></div>
         </div>
         <div id="likeOrDislikeBtns" hidden>
             <button id="likeBtn"><i class="fa-solid fa-thumbs-up"></i></button>

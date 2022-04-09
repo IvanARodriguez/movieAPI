@@ -1,7 +1,6 @@
-import {getApi as apiKey} from './secret.js';
 import {populateGenreDropdown, getSelectedGenre, clearCurrentMovie,  getRandomMovie, displayMovie} from './helpers.js'
 
-const tmdbKey =  apiKey;
+const tmdbKey = "01b27bd5522298a9d8898d6bdc8fd202";
 const tmdbBaseUrl = 'https://api.themoviedb.org/3';
 const playBtn = document.getElementById('playBtn');
 
