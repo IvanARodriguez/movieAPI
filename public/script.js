@@ -51,7 +51,7 @@ const getMovieInfo = async (movie) => {
       return movieInfo;
     }
   } catch(err){
-    cosole.log(err);
+    console.log(err);
   }
 };
 
